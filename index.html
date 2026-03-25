@@ -3,12 +3,733 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Lorenzo</title>
-  <meta name="description" content="" />
+  <title>Lorenzo Sevieri – Marca Pessoal para Médicos</title>
+  <meta name="description" content="Lorenzo Sevieri cria direção visual, narrativa e retratos estratégicos para médicos e profissionais da saúde que querem elevar sua autoridade, reputação e valor percebido." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1>Site Lorenzo</h1>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-name">Lorenzo Sevieri</span>
+        <span class="nav__logo-tag">Marca Pessoal para Médicos</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#entrega">O que entrego</a></li>
+        <li><a href="#processo">Método</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+      <a href="https://wa.me/5513981910507?text=Olá%20Lorenzo,%20quero%20saber%20mais%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--teal btn--nav">
+        <i class="fa-brands fa-whatsapp"></i>
+        Agendar consulta
+      </a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="nav-mobile">
+      <a href="#entrega">O que entrego</a>
+      <a href="#processo">Método</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="https://wa.me/5513981910507" target="_blank" class="btn btn--teal">
+        <i class="fa-brands fa-whatsapp"></i> Agendar consulta
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero">
+    <div class="hero__blob" aria-hidden="true"></div>
+    <div class="hero__blob-2" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="badge badge--glass" data-reveal>
+          <span class="badge__dot"></span>
+          Especialista · Marca Pessoal para Médicos
+        </div>
+
+        <h1 class="hero__headline" data-reveal data-reveal-delay="1">
+          Médicos que<br />
+          lideram não<br />
+          deixam sua<br />
+          <em>imagem ao acaso.</em>
+        </h1>
+
+        <p class="hero__sub" data-reveal data-reveal-delay="2">
+          Lorenzo Sevieri cria direção visual, narrativa e retratos<br class="br-desktop" />
+          estratégicos para profissionais da saúde que querem<br class="br-desktop" />
+          ser percebidos como referência.
+        </p>
+
+        <div class="hero__ctas" data-reveal data-reveal-delay="3">
+          <a href="https://wa.me/5513981910507?text=Olá%20Lorenzo,%20quero%20saber%20mais%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--teal btn--lg">
+            <i class="fa-brands fa-whatsapp"></i>
+            Falar no WhatsApp
+          </a>
+          <a href="#portfolio" class="btn btn--outline btn--lg">
+            Ver portfólio
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="hero__stats" data-reveal data-reveal-delay="4">
+          <div class="hero__stat">
+            <strong>+200</strong>
+            <span>Médicos atendidos</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>100%</strong>
+            <span>Foco em saúde</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>5★</strong>
+            <span>Avaliação média</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" data-reveal data-reveal-delay="2">
+        <img src="img/foto-hero.png" alt="Lorenzo Sevieri" class="hero__photo" />
+
+        <div class="hero__float hero__float--1">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Autoridade</span>
+        </div>
+        <div class="hero__float hero__float--2">
+          <i class="fa-solid fa-eye"></i>
+          <span>Presença</span>
+        </div>
+        <div class="hero__float hero__float--3">
+          <i class="fa-solid fa-award"></i>
+          <span>Confiança</span>
+        </div>
+        <div class="hero__float hero__float--4">
+          <i class="fa-solid fa-fingerprint"></i>
+          <span>Marca Pessoal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-white" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C320,80 720,0 1440,50 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== REPOSICIONAMENTO ===== -->
+  <section id="reposicionamento" class="reposicionamento">
+    <div class="container">
+      <div class="repo__inner">
+        <div class="repo__left" data-reveal>
+          <span class="label-tag">Antes de tudo</span>
+          <h2 class="repo__headline">
+            Isso não é sobre<br />
+            <span class="text-teal">tirar fotos bonitas.</span>
+          </h2>
+        </div>
+        <div class="repo__right" data-reveal data-reveal-delay="1">
+          <p class="repo__text">
+            É sobre construir a forma como seus pacientes, colegas e o mercado percebem você. A imagem que você projeta influencia diretamente a confiança que inspira, a autoridade que transmite e o valor que o mercado atribui ao seu trabalho.
+          </p>
+          <p class="repo__text">
+            Profissionais da saúde que dominam sua imagem digital atraem mais pacientes, fecham melhores parcerias e se posicionam como referência na sua especialidade — não por acidente, mas por design.
+          </p>
+          <div class="repo__pills">
+            <span class="pill pill--dark">Confiança percebida</span>
+            <span class="pill pill--dark">Autoridade digital</span>
+            <span class="pill pill--dark">Posicionamento</span>
+            <span class="pill pill--teal">Marca pessoal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="repo__quote" data-reveal>
+        <div class="repo__quote-line"></div>
+        <blockquote>
+          "Sua presença digital não é opcional. É parte do seu diagnóstico de mercado."
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-dark" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,30 C400,-10 900,70 1440,20 L1440,80 L0,80 Z" fill="#0A0A0A"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== O QUE ELE ENTREGA ===== -->
+  <section id="entrega" class="entrega">
+    <div class="container">
+      <div class="section-head section-head--light" data-reveal>
+        <span class="label-tag label-tag--light">O que você recebe</span>
+        <h2 class="section-title section-title--white">
+          Não um ensaio.<br />Uma <span class="text-teal-bright">transformação</span><br />na sua percepção.
+        </h2>
+        <p class="section-sub section-sub--light">
+          Cada entrega foi pensada para construir autoridade, não apenas registrar momentos.
+        </p>
+      </div>
+
+      <div class="entrega__grid">
+        <div class="glass-card entrega__card" data-reveal data-reveal-delay="1">
+          <div class="entrega__card-icon">
+            <i class="fa-solid fa-crosshairs"></i>
+          </div>
+          <h3>Direção de Imagem Pessoal</h3>
+          <p>Cada detalhe é planejado com intenção — postura, expressão, vestuário, ambiente. Você aparece exatamente como quer ser percebido.</p>
+        </div>
+
+        <div class="glass-card entrega__card" data-reveal data-reveal-delay="2">
+          <div class="entrega__card-icon">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3>Narrativa Visual Estratégica</h3>
+          <p>Criamos uma história visual coerente com sua especialidade e seus objetivos. Sua imagem passa a comunicar o nível real do seu trabalho.</p>
+        </div>
+
+        <div class="glass-card entrega__card" data-reveal data-reveal-delay="3">
+          <div class="entrega__card-icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <h3>Retratos de Autoridade</h3>
+          <p>Fotografias que transmitem confiança, sofisticação e credibilidade — prontas para Instagram, site, anúncios, consultório e palestras.</p>
+        </div>
+
+        <div class="glass-card entrega__card" data-reveal data-reveal-delay="1">
+          <div class="entrega__card-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <h3>Presença Digital Premium</h3>
+          <p>Conteúdo visual pensado para redes sociais, site e materiais profissionais — uma identidade coerente e de alto padrão em todos os canais.</p>
+        </div>
+
+        <div class="glass-card entrega__card" data-reveal data-reveal-delay="2">
+          <div class="entrega__card-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3>Posicionamento Visual</h3>
+          <p>Diferenciação real no mercado médico. Sua imagem passa a refletir o valor do seu trabalho e a atrair o perfil de paciente que você deseja.</p>
+        </div>
+
+        <div class="glass-card entrega__card entrega__card--accent" data-reveal data-reveal-delay="3">
+          <div class="entrega__card-icon">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3>Experiência Personalizada</h3>
+          <p>Não existe fórmula genérica. Cada projeto começa com diagnóstico profundo da sua especialidade, objetivos e marca pessoal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-white" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,50 C500,0 900,80 1440,30 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== PARA QUEM É ===== -->
+  <section id="para-quem" class="para-quem">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="label-tag">Ideal para você se</span>
+        <h2 class="section-title">
+          Você trabalha com excelência.<br />
+          <span class="text-teal">Sua imagem reflete isso?</span>
+        </h2>
+      </div>
+
+      <div class="para-quem__grid">
+        <div class="para-quem__card" data-reveal data-reveal-delay="1">
+          <div class="para-quem__number">01</div>
+          <p>Você é médico, dentista, dermatologista ou especialista e quer ser reconhecido como referência na sua área.</p>
+        </div>
+        <div class="para-quem__card" data-reveal data-reveal-delay="2">
+          <div class="para-quem__number">02</div>
+          <p>Você sente que sua presença no Instagram ou no site não reflete o nível real do seu trabalho.</p>
+        </div>
+        <div class="para-quem__card" data-reveal data-reveal-delay="3">
+          <div class="para-quem__number">03</div>
+          <p>Você quer transmitir confiança e sofisticação para atrair o perfil certo de paciente ou parceiro.</p>
+        </div>
+        <div class="para-quem__card" data-reveal data-reveal-delay="1">
+          <div class="para-quem__number">04</div>
+          <p>Você investe no seu desenvolvimento profissional e sabe que sua marca pessoal é parte do seu negócio.</p>
+        </div>
+        <div class="para-quem__card" data-reveal data-reveal-delay="2">
+          <div class="para-quem__number">05</div>
+          <p>Você palestrou, publicou ou constrói autoridade no digital — e quer que sua imagem esteja à altura.</p>
+        </div>
+        <div class="para-quem__card para-quem__card--teal" data-reveal data-reveal-delay="3">
+          <div class="para-quem__icon">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <p><strong>Se você reconhece a si mesmo aqui, está no lugar certo.</strong></p>
+          <a href="https://wa.me/5513981910507?text=Olá%20Lorenzo,%20quero%20saber%20mais%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--white btn--sm">
+            Conversar agora
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-teal" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,20 C600,80 900,-10 1440,40 L1440,80 L0,80 Z" fill="#0F4C5C"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== PROCESSO ===== -->
+  <section id="processo" class="processo">
+    <div class="container">
+      <div class="section-head section-head--light" data-reveal>
+        <span class="label-tag label-tag--teal-bg">O método</span>
+        <h2 class="section-title section-title--white">
+          Existe um sistema<br />
+          por trás de cada<br />
+          <span class="text-white-dim">imagem que entrego.</span>
+        </h2>
+        <p class="section-sub section-sub--light">
+          Cada etapa foi desenhada para construir percepção, não apenas produzir conteúdo.
+        </p>
+      </div>
+
+      <div class="processo__steps">
+        <div class="processo__step" data-reveal data-reveal-delay="1">
+          <div class="processo__step-num">01</div>
+          <div class="processo__step-content">
+            <h3>Diagnóstico de Posicionamento</h3>
+            <p>Entendemos profundamente sua especialidade, objetivos, público e como você quer ser percebido. A imagem começa aqui.</p>
+          </div>
+          <div class="processo__step-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="processo__step" data-reveal data-reveal-delay="2">
+          <div class="processo__step-num">02</div>
+          <div class="processo__step-content">
+            <h3>Definição da Narrativa Visual</h3>
+            <p>Construímos a história que sua imagem vai contar — coerente com sua especialidade, seus valores e o nível que você representa.</p>
+          </div>
+          <div class="processo__step-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="processo__step" data-reveal data-reveal-delay="3">
+          <div class="processo__step-num">03</div>
+          <div class="processo__step-content">
+            <h3>Planejamento Estratégico</h3>
+            <p>Planejamos cada detalhe do ensaio com intenção — locação, look, postura, iluminação e contexto alinhados ao seu posicionamento.</p>
+          </div>
+          <div class="processo__step-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="processo__step" data-reveal data-reveal-delay="1">
+          <div class="processo__step-num">04</div>
+          <div class="processo__step-content">
+            <h3>Produção dos Retratos</h3>
+            <p>Criamos as imagens com direção visual total. Você só precisa aparecer — a condução é nossa, com foco em autenticidade e autoridade.</p>
+          </div>
+          <div class="processo__step-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="processo__step processo__step--last" data-reveal data-reveal-delay="2">
+          <div class="processo__step-num">05</div>
+          <div class="processo__step-content">
+            <h3>Entrega Orientada para Presença</h3>
+            <p>Imagens editadas e entregues estrategicamente organizadas para uso em redes sociais, site, anúncios e materiais profissionais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-dark" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,60 C360,0 1080,80 1440,20 L1440,80 L0,80 Z" fill="#0A0A0A"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== PORTFÓLIO ===== -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-head section-head--light" data-reveal>
+        <span class="label-tag label-tag--light">Portfólio Estratégico</span>
+        <h2 class="section-title section-title--white">
+          Imagens que <span class="text-teal-bright">elevam</span><br />a percepção.
+        </h2>
+        <p class="section-sub section-sub--light">
+          Cada imagem é construída para comunicar o que sua especialidade exige: confiança, autoridade e valor percebido.
+        </p>
+      </div>
+
+      <div class="portfolio__grid">
+        <!-- Para adicionar foto: substitua o <div class="portfolio__placeholder"> por <img src="img/nome.jpg" alt="..." /> -->
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="1">
+          <img src="img/portfolio1.jpg" alt="Retrato de Autoridade" />
+          <div class="portfolio__overlay"><span>Retrato de Autoridade</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="2">
+          <img src="img/portfolio2.png" alt="Posicionamento Visual" />
+          <div class="portfolio__overlay"><span>Posicionamento Visual</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="3">
+          <img src="img/portfolio3.jpg" alt="Marca Pessoal" />
+          <div class="portfolio__overlay"><span>Marca Pessoal</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="1">
+          <img src="img/portfolio4.jpg" alt="Presença Digital" />
+          <div class="portfolio__overlay"><span>Presença Digital</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="2">
+          <img src="img/portfolio5.jpg" alt="Autoridade Médica" />
+          <div class="portfolio__overlay"><span>Autoridade Médica</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="3">
+          <img src="img/portfolio6.jpg" alt="Narrativa Visual" />
+          <div class="portfolio__overlay"><span>Narrativa Visual</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="1">
+          <img src="img/portfolio7.jpg" alt="Retratos Estratégicos" />
+          <div class="portfolio__overlay"><span>Retratos Estratégicos</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="2">
+          <img src="img/portfolio8.jpg" alt="Identidade Visual" />
+          <div class="portfolio__overlay"><span>Identidade Visual</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="3">
+          <img src="img/portfolio9.jpg" alt="Credibilidade" />
+          <div class="portfolio__overlay"><span>Credibilidade</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="1">
+          <img src="img/portfolio10.jpg" alt="Confiança" />
+          <div class="portfolio__overlay"><span>Confiança</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="2">
+          <img src="img/portfolio11.jpg" alt="Autoridade Premium" />
+          <div class="portfolio__overlay"><span>Autoridade Premium</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="3">
+          <img src="img/portfolio12.jpg" alt="Marca Médica" />
+          <div class="portfolio__overlay"><span>Marca Médica</span></div>
+        </div>
+
+        <div class="portfolio__item" data-reveal data-reveal-delay="1">
+          <img src="img/portfolio14.jpg" alt="Presença Premium" />
+          <div class="portfolio__overlay"><span>Presença Premium</span></div>
+        </div>
+
+
+      </div>
+
+      <div class="portfolio__cta" data-reveal>
+        <a href="https://instagram.com/sevierilorenzofotografia" target="_blank" class="btn btn--outline-light btn--lg">
+          <i class="fa-brands fa-instagram"></i>
+          Ver mais no Instagram
+        </a>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-white" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,30 C720,-20 1080,80 1440,40 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== DIFERENCIAIS ===== -->
+  <section id="diferenciais" class="diferenciais">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="label-tag">Por que Lorenzo</span>
+        <h2 class="section-title">
+          Especialização que<br />
+          <span class="text-teal">faz toda a diferença.</span>
+        </h2>
+      </div>
+
+      <div class="diferenciais__grid">
+        <div class="diferencial__card" data-reveal data-reveal-delay="1">
+          <div class="diferencial__icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <h3>100% focado em médicos</h3>
+          <p>Não atendemos todo mundo. Essa especialização é o que garante profundidade real no posicionamento de cada cliente.</p>
+        </div>
+        <div class="diferencial__card" data-reveal data-reveal-delay="2">
+          <div class="diferencial__icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h3>Método orientado por narrativa</h3>
+          <p>Cada projeto começa pela história que precisa ser contada, não pelo equipamento ou pela técnica.</p>
+        </div>
+        <div class="diferencial__card" data-reveal data-reveal-delay="3">
+          <div class="diferencial__icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>Estética premium consistente</h3>
+          <p>A mesma linguagem visual em todos os canais — Instagram, site, anúncios, consultório, palestras.</p>
+        </div>
+        <div class="diferencial__card" data-reveal data-reveal-delay="1">
+          <div class="diferencial__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>Visão estratégica de marca</h3>
+          <p>Unimos estética, narrativa e posicionamento de mercado em cada imagem produzida.</p>
+        </div>
+        <div class="diferencial__card" data-reveal data-reveal-delay="2">
+          <div class="diferencial__icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Experiência personalizada</h3>
+          <p>Nenhum projeto é igual ao outro. A direção é construída do zero para a sua especialidade e objetivos.</p>
+        </div>
+        <div class="diferencial__card" data-reveal data-reveal-delay="3">
+          <div class="diferencial__icon"><i class="fa-solid fa-star"></i></div>
+          <h3>Resultados que se veem</h3>
+          <p>Mais autoridade percebida, mais engajamento, mais confiança transmitida — impacto real no seu posicionamento.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-dark" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,20 C400,80 1000,0 1440,50 L1440,80 L0,80 Z" fill="#0A0A0A"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section id="sobre" class="sobre">
+    <div class="sobre__inner">
+      <div class="sobre__photo-col">
+        <img src="img/foto-lorenzo1.png" alt="Lorenzo Sevieri" class="sobre__photo" />
+        <div class="sobre__photo-badge">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@sevierilorenzofotografia</span>
+        </div>
+      </div>
+
+      <div class="sobre__content" data-reveal>
+        <span class="label-tag label-tag--light">Quem está por trás</span>
+        <h2 class="section-title section-title--white">
+          Lorenzo Sevieri
+        </h2>
+        <p class="sobre__role">Especialista em Marca Pessoal para Médicos</p>
+
+        <p class="sobre__text">
+          Não sou apenas um fotógrafo. Sou especialista em construção de percepção para profissionais da saúde. Cada imagem que produzo é resultado de uma estratégia — de como você quer ser visto, pelo quem e com qual propósito.
+        </p>
+        <p class="sobre__text">
+          Ao longo da minha trajetória, desenvolvi um método exclusivo que une estética premium, direção visual estratégica e profundo entendimento do mercado médico. O resultado são imagens que não apenas impressionam — elas posicionam.
+        </p>
+
+        <blockquote class="sobre__quote">
+          "Não é apenas sobre como você aparece. É sobre o que sua imagem faz as pessoas acreditarem sobre você."
+        </blockquote>
+
+        <div class="sobre__links">
+          <a href="https://wa.me/5513981910507" target="_blank" class="btn btn--teal btn--lg">
+            <i class="fa-brands fa-whatsapp"></i>
+            Falar com Lorenzo
+          </a>
+          <a href="https://instagram.com/sevierilorenzofotografia" target="_blank" class="btn btn--outline-light btn--lg">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-dark" aria-hidden="true" style="position:relative; background:#0A0A0A;">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;">
+        <path d="M0,0 C360,80 1080,-10 1440,40 L1440,80 L0,80 Z" fill="#111111"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section id="depoimentos" class="depoimentos">
+    <div class="container">
+      <div class="section-head section-head--light" data-reveal>
+        <span class="label-tag label-tag--light">Resultados reais</span>
+        <h2 class="section-title section-title--white">
+          O que dizem os<br />
+          <span class="text-teal-bright">médicos que confiam</span><br />
+          no trabalho.
+        </h2>
+      </div>
+
+      <div class="depoimentos__grid">
+        <div class="glass-card depoimento__card" data-reveal data-reveal-delay="1">
+          <div class="depoimento__stars">★★★★★</div>
+          <p class="depoimento__text">"Passei a transmitir muito mais confiança no Instagram. Meus seguidores sentiram a diferença — e minha agenda também. As fotos finalmente representam o nível do meu trabalho."</p>
+          <div class="depoimento__author">
+            <div class="depoimento__avatar">DM</div>
+            <div>
+              <strong>Dra. Daniela M.</strong>
+              <span>Dermatologista · São Paulo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card depoimento__card" data-reveal data-reveal-delay="2">
+          <div class="depoimento__stars">★★★★★</div>
+          <p class="depoimento__text">"A percepção dos meus pacientes mudou. Recebo comentários frequentes sobre como meu perfil transmite segurança e profissionalismo. O Lorenzo entende o que médicos precisam comunicar."</p>
+          <div class="depoimento__author">
+            <div class="depoimento__avatar">RF</div>
+            <div>
+              <strong>Dr. Rodrigo F.</strong>
+              <span>Cirurgião · Santos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card depoimento__card" data-reveal data-reveal-delay="3">
+          <div class="depoimento__stars">★★★★★</div>
+          <p class="depoimento__text">"Finalmente tenho uma identidade visual coerente com o meu nível profissional. O processo foi totalmente diferente do que eu esperava — muito mais estratégico e pensado. Recomendo sem hesitação."</p>
+          <div class="depoimento__author">
+            <div class="depoimento__avatar">AC</div>
+            <div>
+              <strong>Dra. Ana C.</strong>
+              <span>Endocrinologista · Campinas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimentos__social-proof" data-reveal>
+        <div class="social-proof__item">
+          <i class="fa-brands fa-google"></i>
+          <span>4.9 no Google</span>
+        </div>
+        <div class="social-proof__sep"></div>
+        <div class="social-proof__item">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@sevierilorenzofotografia</span>
+        </div>
+        <div class="social-proof__sep"></div>
+        <div class="social-proof__item">
+          <i class="fa-solid fa-users"></i>
+          <span>+200 médicos atendidos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-teal" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,50 C500,0 950,80 1440,30 L1440,80 L0,80 Z" fill="#0F4C5C"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section id="cta" class="cta-final">
+    <div class="cta-final__blob" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-final__inner" data-reveal>
+        <span class="label-tag label-tag--teal-bg">Próximo passo</span>
+        <h2 class="cta-final__headline">
+          Se sua presença digital não transmite o valor do seu trabalho,<br />
+          ela está te <em>custando posicionamento.</em>
+        </h2>
+        <p class="cta-final__sub">
+          Vagas limitadas por mês para garantir a dedicação que cada projeto exige.<br />
+          Agende sua consulta estratégica gratuita agora.
+        </p>
+        <div class="cta-final__btns">
+          <a href="https://wa.me/5513981910507?text=Olá%20Lorenzo,%20quero%20agendar%20uma%20consulta%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--white btn--xl">
+            <i class="fa-brands fa-whatsapp"></i>
+            Falar no WhatsApp
+          </a>
+          <a href="https://instagram.com/sevierilorenzofotografia" target="_blank" class="btn btn--outline-white btn--xl">
+            <i class="fa-brands fa-instagram"></i>
+            Ver Instagram
+          </a>
+        </div>
+        <p class="cta-final__note">
+          <i class="fa-solid fa-lock"></i>
+          Consulta gratuita · Sem compromisso · Resposta em até 2h
+        </p>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-dark" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#0A0A0A"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__name">Lorenzo Sevieri</span>
+          <span class="footer__tagline">Sevieri Fotografia · Marca Pessoal para Médicos</span>
+          <div class="footer__socials">
+            <a href="https://instagram.com/sevierilorenzofotografia" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5513981910507" target="_blank" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__nav">
+          <span class="footer__nav-title">Navegação</span>
+          <a href="#entrega">O que entrego</a>
+          <a href="#processo">Método</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#depoimentos">Depoimentos</a>
+        </nav>
+
+        <div class="footer__contact">
+          <span class="footer__nav-title">Contato</span>
+          <a href="https://wa.me/5513981910507" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            +55 13 98191-0507
+          </a>
+          <a href="https://instagram.com/sevierilorenzofotografia" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            @sevierilorenzofotografia
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2025 Lorenzo Sevieri · Sevieri Fotografia. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/5513981910507?text=Olá%20Lorenzo,%20quero%20saber%20mais%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar imagem">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
