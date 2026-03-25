@@ -1,0 +1,27 @@
+{
+  "name": "site-lorenzo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m4urilio/site-lorenzo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/m4urilio/site-lorenzo/issues"
+  },
+  "homepage": "https://github.com/m4urilio/site-lorenzo#readme",
+  "devDependencies": {
+    "vite": "^8.0.2"
+  }
+}
