@@ -370,9 +370,13 @@ h1, h2, h3, h4 {
 .nav__mobile a:last-child { border: none; margin-top: 8px; }
 .nav__mobile a:hover { color: var(--white); }
 
+/* botão CTA oculto no mobile — aparece só no desktop */
+.btn--nav { display: none; }
+
 @media (min-width: 900px) {
   .nav__links      { display: flex; }
   .nav__hamburger  { display: none; }
+  .btn--nav        { display: inline-flex; }
 }
 
 /* ============================================================
