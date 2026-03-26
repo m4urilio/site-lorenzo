@@ -1348,7 +1348,7 @@ h1, h2, h3, h4 {
   .hero__content  { align-items: center; }
   .hero__sub      { max-width: 100%; }
   .hero__stats    { justify-content: center; }
-  .hero__visual   { order: -1; }
+  .hero__visual   { order: 1; }
   .hero__float--1, .hero__float--4 { left: -20px; }
   .hero__float--2, .hero__float--3 { right: -20px; }
 
