@@ -1,2 +1,6 @@
 node_modules
 package-lock.json
+*.mkv
+*.mp4
+*.avi
+*.mov
