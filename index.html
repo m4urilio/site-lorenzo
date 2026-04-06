@@ -26,8 +26,9 @@
         <li><a href="#processo">Método</a></li>
         <li><a href="#portfolio">Portfólio</a></li>
         <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
-      <a href="https://wa.me/5511997230847?text=Olá%20Lorenzo,%20quero%20saber%20mais%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--teal btn--nav">
+      <a href="#contato" class="btn btn--teal btn--nav">
         <i class="fa-brands fa-whatsapp"></i>
         Entrar em contato
       </a>
@@ -40,7 +41,8 @@
       <a href="#processo">Método</a>
       <a href="#portfolio">Portfólio</a>
       <a href="#sobre">Sobre</a>
-      <a href="https://wa.me/5511997230847" target="_blank" class="btn btn--teal">
+      <a href="#contato">Contato</a>
+      <a href="#contato" class="btn btn--teal">
         <i class="fa-brands fa-whatsapp"></i> Entrar em contato
       </a>
     </div>
@@ -72,7 +74,7 @@
         </p>
 
         <div class="hero__ctas" data-reveal data-reveal-delay="3">
-          <a href="https://wa.me/5511997230847?text=Olá%20Lorenzo,%20quero%20saber%20mais%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--teal btn--lg">
+          <a href="#contato" class="btn btn--teal btn--lg">
             <i class="fa-brands fa-whatsapp"></i>
             Falar no WhatsApp
           </a>
@@ -274,7 +276,7 @@
             <i class="fa-solid fa-stethoscope"></i>
           </div>
           <p><strong>Se você reconhece a si mesmo aqui, está no lugar certo.</strong></p>
-          <a href="https://wa.me/5511997230847?text=Olá%20Lorenzo,%20quero%20saber%20mais%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--white btn--sm">
+          <a href="#contato" class="btn btn--white btn--sm">
             Conversar agora
           </a>
         </div>
@@ -511,7 +513,7 @@
         </blockquote>
 
         <div class="sobre__links">
-          <a href="https://wa.me/5511997230847" target="_blank" class="btn btn--teal btn--lg">
+          <a href="#contato" class="btn btn--teal btn--lg">
             <i class="fa-brands fa-whatsapp"></i>
             Falar com Lorenzo
           </a>
@@ -620,9 +622,9 @@
           Agende sua consulta estratégica gratuita agora.
         </p>
         <div class="cta-final__btns">
-          <a href="https://wa.me/5511997230847?text=Olá%20Lorenzo,%20quero%20agendar%20uma%20consulta%20sobre%20marca%20pessoal%20para%20médicos" target="_blank" class="btn btn--white btn--xl">
-            <i class="fa-brands fa-whatsapp"></i>
-            Falar no WhatsApp
+          <a href="#contato" class="btn btn--white btn--xl">
+            <i class="fa-solid fa-arrow-down"></i>
+            Quero começar agora
           </a>
           <a href="https://instagram.com/sevierilorenzofotografia" target="_blank" class="btn btn--outline-white btn--xl">
             <i class="fa-brands fa-instagram"></i>
@@ -639,6 +641,93 @@
     <div class="section-edge section-edge--to-dark" aria-hidden="true">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
         <path d="M0,40 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#0A0A0A"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== FORMULÁRIO DE LEAD ===== -->
+  <section id="contato" class="lead-form">
+    <div class="lead-form__blob" aria-hidden="true"></div>
+    <div class="container">
+      <div class="lead-form__inner">
+        <div class="lead-form__head" data-reveal>
+          <span class="label-tag label-tag--teal-bg">Primeiro passo</span>
+          <h2 class="lead-form__headline">
+            Vamos construir sua<br />
+            <span class="text-teal-bright">marca pessoal</span> juntos.
+          </h2>
+          <p class="lead-form__sub">
+            Preencha o formulário abaixo e Lorenzo entrará em contato para uma consulta estratégica gratuita.
+          </p>
+        </div>
+
+        <form class="lf" id="lead-form" novalidate data-reveal data-reveal-delay="1">
+
+          <div class="lf__row">
+            <div class="lf__field">
+              <label class="lf__label" for="lf-nome">Nome completo <span class="lf__req">*</span></label>
+              <input class="lf__input" type="text" id="lf-nome" name="nome" placeholder="Dr. João Silva" required autocomplete="name" />
+            </div>
+
+            <div class="lf__field">
+              <label class="lf__label" for="lf-tel">Telefone / WhatsApp <span class="lf__req">*</span></label>
+              <input class="lf__input" type="tel" id="lf-tel" name="telefone" placeholder="(11) 99999-9999" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="lf__field">
+            <label class="lf__label" for="lf-area">Área de atuação <span class="lf__req">*</span></label>
+            <div class="lf__select-wrap">
+              <select class="lf__input lf__select" id="lf-area" name="area" required>
+                <option value="" disabled selected>Selecione sua especialidade</option>
+                <option value="Anestesiologia">Anestesiologia</option>
+                <option value="Cardiologia">Cardiologia</option>
+                <option value="Cirurgia Geral">Cirurgia Geral</option>
+                <option value="Cirurgia Plástica">Cirurgia Plástica</option>
+                <option value="Clínica Geral">Clínica Geral</option>
+                <option value="Dermatologia">Dermatologia</option>
+                <option value="Endocrinologia">Endocrinologia</option>
+                <option value="Ginecologia e Obstetrícia">Ginecologia e Obstetrícia</option>
+                <option value="Neurologia">Neurologia</option>
+                <option value="Oftalmologia">Oftalmologia</option>
+                <option value="Oncologia">Oncologia</option>
+                <option value="Ortopedia e Traumatologia">Ortopedia e Traumatologia</option>
+                <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+                <option value="Pediatria">Pediatria</option>
+                <option value="Psiquiatria">Psiquiatria</option>
+                <option value="Radiologia">Radiologia</option>
+                <option value="Urologia">Urologia</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <i class="fa-solid fa-chevron-down lf__select-icon"></i>
+            </div>
+          </div>
+
+          <div class="lf__field">
+            <label class="lf__label" for="lf-msg">
+              Mais informações
+              <span class="lf__optional">opcional</span>
+            </label>
+            <textarea class="lf__input lf__textarea" id="lf-msg" name="mensagem" placeholder="Conte um pouco sobre seus objetivos, onde atua, o que espera do projeto..." rows="4"></textarea>
+          </div>
+
+          <button class="lf__submit" type="submit">
+            <i class="fa-brands fa-whatsapp"></i>
+            Quero minha consulta gratuita
+          </button>
+
+          <p class="lf__note">
+            <i class="fa-solid fa-lock"></i>
+            Seus dados são confidenciais · Resposta em até 2h
+          </p>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="section-edge section-edge--to-dark" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,30 C480,80 960,0 1440,45 L1440,80 L0,80 Z" fill="#0A0A0A"/>
       </svg>
     </div>
   </section>
@@ -700,5 +789,26 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    // Formulário de lead — redireciona após envio
+    document.getElementById('lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.lf__submit');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+      setTimeout(function() {
+        window.location.href = 'https://tp-lorenzo.vercel.app/';
+      }, 600);
+    });
+
+    // Máscara de telefone
+    document.getElementById('lf-tel').addEventListener('input', function() {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+      else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+      else if (v.length > 0) v = '(' + v;
+      this.value = v;
+    });
+  </script>
 </body>
 </html>
