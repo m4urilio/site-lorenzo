@@ -788,6 +788,93 @@
     <img class="lightbox__img" id="lightbox-img" src="" alt="" />
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════
+       Universo Digital — Rastreamento Avançado de Leads
+       Cliente: Lorenzo Sevieri
+       ══════════════════════════════════════════════════════════ -->
+
+  <!-- PARTE 1: Meta Pixel + GTM (inicialização) -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1284602730296244');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1284602730296244&ev=PageView&noscript=1" alt=""></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-M8CBV7DN");</script>
+
+  <!-- PARTE 2: Rastreamento de leads (WhatsApp + Formulários) -->
+  <script>
+  (function(){
+    var SLUG   = 'lorenzo-sevieri';
+    var PIXEL  = '1284602730296244';
+    var SECRET = 'ec649637c69b408b965b07831282e282';
+    var SERVER = 'https://ud-rastreamento-production.up.railway.app';
+    var _fired = false;
+
+    function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:'';}
+    function getParam(p){return new URLSearchParams(window.location.search).get(p)||'';}
+    function getEventId(){
+      var k='ud_eid_'+SLUG,e=sessionStorage.getItem(k);
+      if(!e){e=crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem(k,e);}
+      return e;
+    }
+    function extractForm(form){
+      var d={nome:'',telefone:'',email:''};
+      form.querySelectorAll('input,textarea,select').forEach(function(f){
+        var n=(f.name||f.id||f.placeholder||'').toLowerCase(),v=(f.value||'').trim();
+        if(!v)return;
+        if(/nome|name|first|sobrenome/.test(n))d.nome=d.nome||v;
+        if(/tel|phone|celular|whatsapp|fone|cel/.test(n))d.telefone=d.telefone||v;
+        if(/email|e-mail/.test(n))d.email=d.email||v;
+      });
+      return d;
+    }
+    function fire(nome,telefone,email){
+      if(_fired)return; _fired=true;
+      var eid=getEventId();
+      var fbp=getCookie('_fbp');
+      var fbc=getCookie('_fbc')||(getParam('fbclid')?'fb.1.'+Date.now()+'.'+getParam('fbclid'):'');
+      if(window.fbq)fbq('track','Lead',{},{eventID:eid});
+      var payload={
+        client_slug:SLUG,webhook_secret:SECRET,
+        nome:nome||'',telefone:telefone||'',email:email||'',
+        event_id:eid,fbp:fbp,fbc:fbc,
+        utm_source:getParam('utm_source'),utm_medium:getParam('utm_medium'),
+        utm_campaign:getParam('utm_campaign'),utm_content:getParam('utm_content'),
+        utm_term:getParam('utm_term'),gclid:getParam('gclid'),
+        device:/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop',
+        page_url:window.location.href
+      };
+      try{fetch(SERVER+'/rastr/webhook-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true});}catch(e){}
+    }
+    // WhatsApp click
+    document.addEventListener('click',function(e){
+      var el=e.target.closest('a[href]')||e.target.closest('[data-href]');
+      if(!el)return;
+      var h=el.getAttribute('href')||el.getAttribute('data-href')||'';
+      if(/wa\.me|whatsapp\.com|whatsapp:/.test(h))fire('','','');
+    },true);
+    // Form submit padrao
+    document.addEventListener('submit',function(e){
+      var d=extractForm(e.target);fire(d.nome,d.telefone,d.email);
+    },true);
+    // Elementor Forms (jQuery hook)
+    function hookElementor(){
+      if(!window.jQuery)return;
+      jQuery(document).on('elementor_pro/forms/submit_success',function(ev,res){
+        var fields=res&&res.data&&res.data.fields?res.data.fields:(res&&res.fields?res.fields:[]);
+        var n='',t='',em='';
+        fields.forEach(function(f){
+          var id=(f.id||'').toLowerCase();
+          if(/nome|name/.test(id))n=n||f.value;
+          if(/tel|phone|celular|whatsapp/.test(id))t=t||f.value;
+          if(/email/.test(id))em=em||f.value;
+        });
+        fire(n,t,em);
+      });
+    }
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',hookElementor);}
+    else{hookElementor();}
+  })();
+  </script>
+  <!-- Fim do código Universo Digital -->
+
   <script src="js/main.js"></script>
   <script>
     // Formulário de lead — redireciona após envio
