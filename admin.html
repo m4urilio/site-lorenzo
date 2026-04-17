@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Lorenzo Sevieri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --teal: #2dd4bf;
+      --teal-dim: rgba(45,212,191,0.1);
+      --white: #f0f6fc;
+      --muted: #8b949e;
+      --red: #f85149;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); min-height: 100vh; }
+
+    /* ── LOGIN ── */
+    #login-screen {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 24px;
+    }
+    .login-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 48px 40px; width: 100%; max-width: 380px;
+      text-align: center;
+    }
+    .login-box h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
+    .login-box p { color: var(--muted); font-size: 0.875rem; margin-bottom: 32px; }
+    .login-box input {
+      width: 100%; padding: 12px 16px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg);
+      color: var(--white); font-size: 1.1rem; text-align: center;
+      letter-spacing: 0.3em; margin-bottom: 16px; outline: none;
+      font-family: inherit;
+      transition: border 0.2s;
+    }
+    .login-box input:focus { border-color: var(--teal); }
+    .login-box button {
+      width: 100%; padding: 12px; border-radius: 10px; border: none;
+      background: var(--teal); color: #0d1117; font-weight: 700;
+      font-size: 0.95rem; cursor: pointer; font-family: inherit;
+      transition: opacity 0.2s;
+    }
+    .login-box button:hover { opacity: 0.85; }
+    .login-error { color: var(--red); font-size: 0.82rem; margin-top: 10px; display: none; }
+
+    /* ── ADMIN ── */
+    #admin-screen { display: none; }
+    header {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 16px 32px; display: flex; align-items: center; justify-content: space-between;
+    }
+    header h1 { font-size: 1rem; font-weight: 600; }
+    header span { color: var(--muted); font-size: 0.82rem; }
+    .header-actions { display: flex; gap: 10px; }
+    .btn-action {
+      padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+      background: transparent; color: var(--white); font-size: 0.82rem;
+      cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 6px;
+      transition: background 0.2s;
+    }
+    .btn-action:hover { background: var(--border); }
+    .btn-action--teal { background: var(--teal-dim); border-color: var(--teal); color: var(--teal); }
+    .btn-action--teal:hover { background: rgba(45,212,191,0.2); }
+    .btn-action--red { color: var(--red); border-color: rgba(248,81,73,0.3); }
+    .btn-action--red:hover { background: rgba(248,81,73,0.1); }
+
+    main { padding: 32px; max-width: 1200px; margin: 0 auto; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 24px;
+    }
+    .stat-card__label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .stat-card__value { font-size: 2rem; font-weight: 700; color: var(--teal); }
+
+    /* Table */
+    .table-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .table-toolbar {
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .table-toolbar h2 { font-size: 0.95rem; font-weight: 600; }
+    .search-input {
+      padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg); color: var(--white); font-size: 0.85rem;
+      font-family: inherit; outline: none; width: 220px;
+    }
+    .search-input:focus { border-color: var(--teal); }
+    table { width: 100%; border-collapse: collapse; }
+    thead { background: rgba(255,255,255,0.03); }
+    thead th {
+      padding: 12px 16px; text-align: left; font-size: 0.75rem;
+      font-weight: 600; color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.08em; white-space: nowrap;
+    }
+    tbody tr { border-top: 1px solid var(--border); transition: background 0.15s; }
+    tbody tr:hover { background: rgba(255,255,255,0.025); }
+    tbody td { padding: 14px 16px; font-size: 0.85rem; vertical-align: middle; }
+    .badge {
+      display: inline-block; padding: 3px 10px; border-radius: 100px;
+      font-size: 0.72rem; font-weight: 600; background: var(--teal-dim); color: var(--teal);
+      white-space: nowrap;
+    }
+    .msg-cell { color: var(--muted); max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .date-cell { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+    .no-leads {
+      text-align: center; padding: 60px 20px; color: var(--muted); font-size: 0.9rem;
+    }
+    .no-leads i { font-size: 2rem; display: block; margin-bottom: 12px; opacity: 0.4; }
+
+    @media (max-width: 640px) {
+      main { padding: 20px 16px; }
+      header { padding: 14px 16px; }
+      .search-input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── LOGIN ── -->
+<div id="login-screen">
+  <div class="login-box">
+    <h1>🔒 Painel Admin</h1>
+    <p>Lorenzo Sevieri · Leads</p>
+    <input type="password" id="pwd-input" placeholder="••••" maxlength="10" />
+    <button onclick="checkPassword()">Entrar</button>
+    <p class="login-error" id="login-error">Senha incorreta. Tente novamente.</p>
+  </div>
+</div>
+
+<!-- ── ADMIN ── -->
+<div id="admin-screen">
+  <header>
+    <div>
+      <h1><i class="fa-solid fa-chart-line" style="color:var(--teal);margin-right:8px"></i>Painel de Leads</h1>
+      <span>Lorenzo Sevieri</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn-action btn-action--teal" onclick="exportCSV()">
+        <i class="fa-solid fa-download"></i> Exportar CSV
+      </button>
+      <button class="btn-action btn-action--red" onclick="clearLeads()">
+        <i class="fa-solid fa-trash"></i> Limpar
+      </button>
+      <button class="btn-action" onclick="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i> Sair
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-card__label">Total de Leads</div>
+        <div class="stat-card__value" id="stat-total">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Hoje</div>
+        <div class="stat-card__value" id="stat-today">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Esta semana</div>
+        <div class="stat-card__value" id="stat-week">0</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-toolbar">
+        <h2>Todos os Leads</h2>
+        <input class="search-input" type="text" id="search" placeholder="🔍  Buscar nome, área..." oninput="renderTable()" />
+      </div>
+      <div id="table-container"></div>
+    </div>
+  </main>
+</div>
+
+<script>
+  const PASSWORD = '1945';
+
+  function checkPassword() {
+    const val = document.getElementById('pwd-input').value;
+    if (val === PASSWORD) {
+      sessionStorage.setItem('admin_auth', '1');
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('admin-screen').style.display = 'block';
+      loadDashboard();
+    } else {
+      document.getElementById('login-error').style.display = 'block';
+      document.getElementById('pwd-input').value = '';
+      document.getElementById('pwd-input').focus();
+    }
+  }
+
+  document.getElementById('pwd-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  function logout() {
+    sessionStorage.removeItem('admin_auth');
+    location.reload();
+  }
+
+  function getLeads() {
+    return JSON.parse(localStorage.getItem('lorenzo_leads') || '[]');
+  }
+
+  function loadDashboard() {
+    const leads = getLeads();
+    const today = new Date().toLocaleDateString('pt-BR');
+    const weekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+
+    document.getElementById('stat-total').textContent = leads.length;
+    document.getElementById('stat-today').textContent = leads.filter(l => l.data && l.data.startsWith(today)).length;
+    document.getElementById('stat-week').textContent = leads.filter(l => l.id >= weekAgo).length;
+
+    renderTable();
+  }
+
+  function renderTable() {
+    const leads = getLeads();
+    const q = document.getElementById('search').value.toLowerCase();
+    const filtered = q ? leads.filter(l =>
+      (l.nome||'').toLowerCase().includes(q) ||
+      (l.area||'').toLowerCase().includes(q) ||
+      (l.telefone||'').includes(q)
+    ) : leads;
+
+    const container = document.getElementById('table-container');
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<div class="no-leads"><i class="fa-solid fa-inbox"></i>' +
+        (leads.length === 0 ? 'Nenhum lead ainda.' : 'Nenhum resultado encontrado.') + '</div>';
+      return;
+    }
+
+    let rows = filtered.map(l => `
+      <tr>
+        <td>${escHtml(l.nome || '—')}</td>
+        <td>${escHtml(l.telefone || '—')}</td>
+        <td><span class="badge">${escHtml(l.area || '—')}</span></td>
+        <td class="msg-cell" title="${escHtml(l.mensagem || '')}">${escHtml(l.mensagem || '—')}</td>
+        <td class="date-cell">${escHtml(l.data || '—')}</td>
+      </tr>`).join('');
+
+    container.innerHTML = `
+      <table>
+        <thead><tr>
+          <th>Nome</th><th>Telefone</th><th>Especialidade</th><th>Mensagem</th><th>Data</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function exportCSV() {
+    const leads = getLeads();
+    if (!leads.length) return alert('Nenhum lead para exportar.');
+    const header = ['Data','Nome','Telefone','Especialidade','Mensagem'];
+    const rows = leads.map(l => [l.data, l.nome, l.telefone, l.area, l.mensagem].map(v => `"${(v||'').replace(/"/g,'""')}"`).join(','));
+    const csv = [header.join(','), ...rows].join('\n');
+    const a = document.createElement('a');
+    a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent('\uFEFF' + csv);
+    a.download = 'leads-lorenzo-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+  }
+
+  function clearLeads() {
+    if (!confirm('Tem certeza? Isso apagará todos os leads permanentemente.')) return;
+    localStorage.removeItem('lorenzo_leads');
+    loadDashboard();
+  }
+
+  // Auto-login se já autenticado nesta sessão
+  if (sessionStorage.getItem('admin_auth') === '1') {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-screen').style.display = 'block';
+    loadDashboard();
+  }
+</script>
+</body>
+</html>

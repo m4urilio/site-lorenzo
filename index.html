@@ -877,12 +877,26 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Formulário de lead — redireciona após envio
+    // Formulário de lead — salva lead e redireciona
     document.getElementById('lead-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const btn = this.querySelector('.lf__submit');
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+
+      // Salva lead no localStorage
+      const lead = {
+        id: Date.now(),
+        data: new Date().toLocaleString('pt-BR'),
+        nome: document.getElementById('lf-nome').value.trim(),
+        telefone: document.getElementById('lf-tel').value.trim(),
+        area: document.getElementById('lf-area').value,
+        mensagem: document.getElementById('lf-msg').value.trim()
+      };
+      const leads = JSON.parse(localStorage.getItem('lorenzo_leads') || '[]');
+      leads.unshift(lead);
+      localStorage.setItem('lorenzo_leads', JSON.stringify(leads));
+
       setTimeout(function() {
         window.location.href = 'https://tp-lorenzo.vercel.app/';
       }, 600);
